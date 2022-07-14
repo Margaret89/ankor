@@ -1,0 +1,143 @@
+html,
+body{
+	background: #fff;
+	font-family: $font-site;
+	@include font(normal, normal, 10px, 1.6, $color-text);
+	box-sizing:border-box;
+}
+
+body{font-size: 1.7rem;}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+	font-size: inherit;
+	font-family: inherit;
+}
+
+img{max-width: 100%;}
+
+a{
+	color: $color-blue;
+	text-decoration: underline;
+}
+
+a:hover{text-decoration: none;}
+
+p{
+	padding: 0;
+	margin-bottom: 2rem;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5
+{
+	line-height: 1.4;
+	color: $color-text;
+}
+
+h1,.h1{
+	font-family: $font-exo;
+	font-size: 3.2rem;
+	font-weight: bold;
+	margin-bottom: 4rem;
+}
+
+h2,.h2{
+	font-family: $font-exo;
+	font-size: 3.2rem;
+	font-weight: bold;
+	margin-bottom: 3rem;
+}
+
+h3,.h3{
+	font-size: 2.8rem;
+	margin-bottom: 2rem;
+}
+
+h4,.h4{
+	font-size: 2.4rem;
+	margin-bottom: 2rem;
+}
+
+h5,.h5{
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.wrapper{
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+	margin: 0 auto;
+}
+
+main{
+	flex: 1 1 auto;
+	padding-bottom: 100px;
+	width: 100%;
+}
+
+.last-elem{margin-bottom: -100px;}
+
+.btn,
+input[type="submit"].btn,
+button.btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 6rem;
+	min-width: 200px;
+	background: $color-blue;
+	border: none;
+	@include font(none, 600, 1.5rem, 1.4, #fff);
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	padding: 0 30px;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+
+	&:hover{color: #fff;}
+}
+
+input[type="submit"].btn:hover{background: linear-gradient(270deg, #7ADAFF 0%, #01B0F4 100%);}
+
+.btn{
+	&::after{
+		content: "";
+		height: 100%;
+		width: 0;
+		background: linear-gradient(270deg, #7ADAFF 0%, #01B0F4 100%);
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: width 0.2s ease 0s;
+		z-index: -1;
+	}
+
+	&:hover::after{width: 100%;}
+}
+
+.code{
+	background-color: #f7f7f7;
+	border: 1px solid #e1e1e8;
+	color: #d14;
+	padding: 1px 4px;
+	display: inline-block;
+	font-family: monospace, arial;
+	border-radius: 3px;
+}
+
+.text-left{text-align: left !important;}
+.text-center{text-align: center !important;}
+.text-right{text-align: right !important;}
+.text-justify{text-align: justify !important;}
+.text-uppercase{text-transform: uppercase !important;}
+.text-bold {font-weight: 700 !important;}

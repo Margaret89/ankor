@@ -1,0 +1,25 @@
+@import "utils/vars";
+
+// bootstrap
+@import "~bootstrap/scss/bootstrap-grid";
+
+// // fancybox
+// @import '~@fancyapps/ui/dist/fancybox.css';
+
+// // slick
+// @import '~slick-slider/slick/slick.css';
+
+// Наш сайт
+// @import "utils/libs";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
+
+@import "layouts/*";
+@import "components/*";
+
+
+
+
+
+

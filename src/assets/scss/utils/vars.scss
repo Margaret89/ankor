@@ -1,0 +1,33 @@
+//Path
+$path-img: "../img";
+$path-fonts: "../fonts";
+
+//Font
+$font-site: 'Montserrat', Arial, sans-serif;
+$font-exo: 'Exo2', Arial, sans-serif;
+
+// Site
+$color-text: #000;
+$color-grey: #606060;
+$color-blue: #01B0F4;
+$color-red: #F81717;
+
+// Grid
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1240px,
+  xxl: 1600px
+) !default;
+     
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px,
+  xxl: 1200px
+) !default;
+
+$grid-gutter-width: 30px !default;
