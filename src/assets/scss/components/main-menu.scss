@@ -1,0 +1,94 @@
+/*-------------- main-menu -----------------*/
+.main-menu{
+	background: $color-dark-grey;
+
+	&__list,
+	&__item,
+	&__sub,
+	&__sub-item{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__list{
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item{
+		flex-basis: 100%;
+		position: relative;
+		transition: background 0.2s ease 0s;
+	}
+
+	&__link{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 18px 30px;
+		@include font(none, 600, 1.7rem, 1.4, #fff);
+		text-decoration: none;
+		text-align: center;
+	}
+
+	&__arr{
+		flex-shrink: 0;
+		margin-left: 5px;
+
+		.icon{fill: #fff;}
+	}
+
+	&__sub{
+		display: none;
+		width: 292px;
+		background: $color-blue;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	&__sub-item{
+		position: relative;
+		transition: background 0.2s ease 0s;
+	}
+
+	&__sub-link{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		text-decoration: none;
+		@include font(none, 600, 1.5rem, 1.6, #fff);
+		padding: 12px 30px;
+	}
+
+	&__sub-arr{
+		flex-shrink: 0;
+		margin-left: 5px;
+		transform: rotate(270deg);
+
+		.icon{fill: #fff;}
+	}
+
+	&__sub &__sub{
+		background: #008EC6;
+		position: absolute;
+		top: 0;
+		left: 100%;
+	}
+
+	&__item:last-child &__sub &__sub{
+		left: auto;
+		right: 100%;
+	}
+
+	&__item:hover{background: $color-blue;}
+
+	&__item:hover > &__sub,
+	&__sub-item:hover > &__sub{
+		display: block;
+	}
+
+	&__sub-item:hover{background: #008EC6;}
+	&__sub &__sub &__sub-item:hover{background: #0078A7;}
+}

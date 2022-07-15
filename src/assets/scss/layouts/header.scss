@@ -1,0 +1,85 @@
+.header{
+	&__content{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 17px 0;
+	}
+}
+
+.top-menu{
+	&,
+	&__item{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&{
+		display: inline-flex;
+		align-items: center;
+	}
+
+	&__item{margin: 0 15px;}
+
+	&__item,
+	&__link{
+		@include font(none, none, 1.5rem, 1.6, $color-text);
+		text-decoration: none;
+	}
+
+	&__link{
+		position: relative;
+		padding-bottom: 5px;
+
+		&::before,
+		&::after{
+			content: '';
+			display: block;
+			height: 1px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			transition: width 0.2s ease 0s;
+		}
+
+		&::before{
+			width: 100%;
+			background: #e2e2e2;
+		}
+
+		&::after{
+			width: 0;
+			background: $color-blue;
+		}
+
+		&:hover::after{width: 100%;}
+	}
+}
+
+.header-contacts{
+	display: inline-flex;
+	align-items: center;
+	padding-left: 40px;
+
+	&__icon{
+		flex-shrink: 0;
+		margin-right: 10px;
+
+		.icon{fill: $color-blue;}
+	}
+
+	&__item:not(:last-child){margin-right: 15px;}
+
+	&__item{
+		@include font(none, none, 1.5rem, 1.6, $color-text);
+
+		a{
+			color: $color-text;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-blue;}
+	}
+}

@@ -1,4 +1,108 @@
 header.header
 	.container
 		.row
-			.col-12 header
+			.col-12
+				.header__content
+					.header__logo
+						a(href="#")
+							img(src="assets/img/logo.svg", alt="")
+
+					ul.top-menu
+						-
+							var list=[
+								{text:'О компании'},
+								{text:'Наши работы', status:'active'},
+								{text:'Цены'},
+								{text:'Контакты'},
+							]
+						each item in list
+							li.top-menu__item(class=item.status?'active':'')
+								a(href="#").top-menu__link= item.text
+
+					.header-contacts
+						.header-contacts__icon
+							+svg('ic-phone','ic-phone', '18', '18')
+						.header-contacts__item
+							a(href="tel:+78127151392") (812) 715-13-92
+						.header-contacts__item
+							a(href="tel:+78129711213") (812) 971-12-13
+
+				nav.main-menu
+					ul.main-menu__list
+						-
+							var list=[
+								{
+									text:'Металлоконструкции',
+									sub:[
+										{text:'Пункт 1'},
+										{text:'Пункт 2'},
+										{text:'Пункт 3'},
+										{text:'Пункт 4'},
+									]
+								},
+								{
+									text:'Горячее цинкование',
+									status:'active',
+									sub:[
+										{text:'Гальваническое цинкование'},
+										{
+											text:'Горячее цинкование',
+											sub:[
+												'Оцинкованный прокат',
+												'Гальваническое цинкование',
+												'Горячее цинкование',
+											]
+										},
+										{text:'Оцинкованный прокат'},
+										{text:'Термодиффузионное цинкование'},
+										{text:'Желтый цинк'},
+									]
+								},
+								{
+									text:'Металические изделия',
+									sub:[
+										{text:'Пункт 1'},
+										{
+											text:'Пункт 2',
+											sub:[
+												'Оцинкованный прокат',
+												'Гальваническое цинкование',
+												'Горячее цинкование',
+											]
+										},
+									]
+								},
+								{
+									text:'Металлообработка',
+									sub:[
+										{
+											text:'Пункт 1',
+											sub:[
+												'Оцинкованный прокат',
+												'Гальваническое цинкование',
+												'Горячее цинкование',
+											]
+										},
+									]
+								},
+							]
+						each item in list
+							li.main-menu__item
+								a.main-menu__link(href="#", class=item.status?'active':'')= item.text
+									span.main-menu__arr
+										+svg('ic-arrow-down','ic-arrow-down', '11', '7')
+								
+								if(item.sub)
+									ul.main-menu__sub
+										each sub in item.sub
+											li.main-menu__sub-item
+												a(href="#").main-menu__sub-link= sub.text
+													span.main-menu__sub-arr
+														if(sub.sub)
+															+svg('ic-arrow-down','ic-arrow-down', '11', '7')
+
+												if(sub.sub)
+													ul.main-menu__sub
+														each sub2 in sub.sub
+															li.main-menu__sub-item
+																a(href="#").main-menu__sub-link= sub2
