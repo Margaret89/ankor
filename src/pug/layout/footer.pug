@@ -1,4 +1,32 @@
 footer.footer
-	.container
-		.row
-			.col-12 footer
+	.footer__content
+		.footer__info
+			.container
+				.row
+					.col-4
+						.footer__logo
+							a(href="#")
+								img(src="assets/img/logo-white.svg", alt="")
+
+						.footer__copyright © 2005 — 2022 ООО «Анкор»
+
+					.col-4
+						.footer-phone
+							.footer-phone__item
+								a(href="tel:+78127151392") (812) 715-13-92
+
+							.footer-phone__item
+								a(href="tel:+78129711213") (812) 971-12-13
+
+					.col-4
+						ul.footer-menu
+							-
+								var list=[
+									{text:'О компании'},
+									{text:'Наши работы'},
+									{text:'Цены'},
+									{text:'Контакты'},
+								]
+							each item in list
+								li.footer-menu__item
+									a(href="#").footer-menu__link= item.text
