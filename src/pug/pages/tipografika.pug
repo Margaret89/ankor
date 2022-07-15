@@ -61,6 +61,52 @@ block content
 
 				br
 				br
+				br
+				div.h2 Таблицы
+				table.table-site
+					th
+						td Заголовок
+						td Заголовок
+						td Заголовок
+
+					tr
+						td Текст
+						td Текст
+						td Текст
+
+					tr
+						td &nbsp;
+						td &nbsp;
+						td &nbsp;
+
+				br
+				br
+				br
+				.h2 Табуляция
+				.tabs-page.js-tabs-page
+					//- .tabs-page__left.d-md-none
+					//- 	+svg('ic-arrow-left','ic-arrow-left', '12', '18')
+
+					//- .tabs-page__right.d-md-none
+					//- 	+svg('ic-arrow-right','ic-arrow-right', '12', '18')
+
+					ul.tabs-page__list.js-tabs-page-list
+						li.tabs-page__item.js-tabs-page-item(data-item='tab1') Tab1
+						li.tabs-page__item.js-tabs-page-item(data-item='tab2') Tab2
+						li.tabs-page__item.js-tabs-page-item(data-item='tab3') Tab3
+						li.tabs-page__item.js-tabs-page-item(data-item='tab4') Tab4
+					.tabs-page__content.js-tabs-page-content
+						#tab1.tabs-page__content-item.js-tabs-page-content-item.js-tabs-page-content-item
+							| Первый контент
+						#tab2.tabs-page__content-item.js-tabs-page-content-item.js-tabs-page-content-item
+							| Второй контент
+						#tab3.tabs-page__content-item.js-tabs-page-content-item.js-tabs-page-content-item
+							| Третий контент
+						#tab4.tabs-page__content-item.js-tabs-page-content-item.js-tabs-page-content-item
+							| Четвёртый контент
+
+				br
+				br
 				div.h2 Иконки
 				.type-icon
 					.type-icon__item
@@ -72,3 +118,44 @@ block content
 						.type-icon__img
 							+svg('ic-arrow-down','ic-arrow-down', '11', '7')
 						.type-icon__name ic-arrow-down
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-garantee','ic-garantee', '24', '28')
+						.type-icon__name ic-garantee
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-cash','ic-cash', '30', '22')
+						.type-icon__name ic-cash
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-safe','ic-safe', '28', '28')
+						.type-icon__name ic-safe
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-paper','ic-paper', '30', '40')
+						.type-icon__name ic-paper
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-msg','ic-msg', '41', '40')
+						.type-icon__name ic-msg
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-calc','ic-calc', '33', '40')
+						.type-icon__name ic-calc
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-contract','ic-contract', '34', '36')
+						.type-icon__name ic-contract
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-delivery','ic-delivery', '37', '35')
+						.type-icon__name ic-delivery
+
