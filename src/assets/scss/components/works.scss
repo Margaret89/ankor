@@ -1,0 +1,25 @@
+/*-------------- works -----------------*/
+.works-slider{
+	display: none;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	&.slick-initialized{display: block;}
+	.slick-slide{margin: 0 15px;}
+
+	&__item{
+		padding-bottom: 63%;
+		position: relative;
+	}
+
+	&__img{
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+a.works-slider__img{cursor: zoom-in;}

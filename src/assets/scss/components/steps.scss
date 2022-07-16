@@ -1,0 +1,61 @@
+/*-------------- steps -----------------*/
+.step-list{
+	display: flex;
+	flex-wrap: wrap;
+
+	.step-item{
+		margin-right: -1px;
+		margin-bottom: -1px;
+	}
+}
+
+.step-item{
+	width: calc(33.33% + 1px);
+	position: relative;
+	padding: 40px 40px 40px 90px;
+	border: 1px solid #e2e2e2;
+
+	&_long{width: 50%;}
+
+	&__num{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 46px;
+		background: linear-gradient(260.91deg, #2E3540 0%, #3A4860 100%), linear-gradient(266.26deg, #00AFF3 0%, #58DCF8 100%), #01B0F4;
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+		padding: 5px;
+		@include font(none, bold, 2.2rem, 1, #fff);
+		text-align: center;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__icon{
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		max-height: 100%;
+		margin-bottom: 28px;
+
+		.icon{fill: $color-blue;}
+	}
+
+	&__title{
+		@include font(none, 600, 1.9rem, 1.6, none);
+		margin-bottom: 10px;
+	}
+
+	&__text{
+		@include font(none, none, 1.5rem, 1.6, #606060);
+	}
+
+	.btn{
+		width: 100%;
+		margin-top: 22px;
+	}
+}

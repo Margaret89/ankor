@@ -1,0 +1,35 @@
+/*-------------- about -----------------*/
+.about{
+	&__content{
+		border: 1px solid #e2e2e2;
+		clip-path: polygon(160px 0, 100% 0, 100% calc(100% - 160px), calc(100% - 160px) 100%, 0 100%, 0 160px);
+		position: relative;
+		padding: 100px 0;
+
+		&::before{
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 160px 160px 0 0;
+			border-color: #e2e2e2 transparent transparent transparent;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&::after{
+			content: '';
+			display: inline-block;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 0 160px 160px;
+			border-color: transparent transparent #e2e2e2 transparent;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}

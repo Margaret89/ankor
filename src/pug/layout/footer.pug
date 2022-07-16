@@ -31,3 +31,13 @@ footer.footer
 								each item in list
 									li.footer-menu__item
 										a(href="#").footer-menu__link= item.text
+
+#msg-success(style='display: none;')
+	.success-alert.js-success-alert
+		.success-alert__icon
+			+svg('ic-tick-circle','ic-tick-circle', '50', '50')
+
+		.success-alert__title.js-success-alert-title Спасибо,
+			br
+			|ваш запрос отправлен!
+		.success-alert__text.js-success-alert-text Наш менеджер свяжется с вами в ближайшее время

@@ -37,6 +37,13 @@ block content
 
 				br
 				br
+				div.h2 Отступы
+				p <span class="code">m-indent</span> Верхний и нижний отступ 120px
+				p <span class="code">mt-indent</span> Верхний отступ 120px
+				p <span class="code">mb-indent</span> Нижний отступ 120px
+
+				br
+				br
 				div.h2 Заголовки
 				h1 Заголовок - h1
 				h2 Заголовок - h2
@@ -64,10 +71,10 @@ block content
 				br
 				div.h2 Таблицы
 				table.table-site
-					th
-						td Заголовок
-						td Заголовок
-						td Заголовок
+					tr
+						th Заголовок
+						th Заголовок
+						th Заголовок
 
 					tr
 						td Текст
@@ -84,17 +91,11 @@ block content
 				br
 				.h2 Табуляция
 				.tabs-page.js-tabs-page
-					//- .tabs-page__left.d-md-none
-					//- 	+svg('ic-arrow-left','ic-arrow-left', '12', '18')
-
-					//- .tabs-page__right.d-md-none
-					//- 	+svg('ic-arrow-right','ic-arrow-right', '12', '18')
-
 					ul.tabs-page__list.js-tabs-page-list
-						li.tabs-page__item.js-tabs-page-item(data-item='tab1') Tab1
-						li.tabs-page__item.js-tabs-page-item(data-item='tab2') Tab2
-						li.tabs-page__item.js-tabs-page-item(data-item='tab3') Tab3
-						li.tabs-page__item.js-tabs-page-item(data-item='tab4') Tab4
+						li.tabs-page__item.js-tabs-page-item(data-item='tab1', data-id='0') Tab1
+						li.tabs-page__item.js-tabs-page-item(data-item='tab2', data-id='1') Tab2
+						li.tabs-page__item.js-tabs-page-item(data-item='tab3', data-id='2') Tab3
+						li.tabs-page__item.js-tabs-page-item(data-item='tab4', data-id='3') Tab4
 					.tabs-page__content.js-tabs-page-content
 						#tab1.tabs-page__content-item.js-tabs-page-content-item.js-tabs-page-content-item
 							| Первый контент
@@ -118,6 +119,16 @@ block content
 						.type-icon__img
 							+svg('ic-arrow-down','ic-arrow-down', '11', '7')
 						.type-icon__name ic-arrow-down
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-left','ic-arrow-left', '6', '12')
+						.type-icon__name ic-arrow-left
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-arrow-right','ic-arrow-right', '6', '12')
+						.type-icon__name ic-arrow-right
 
 					.type-icon__item
 						.type-icon__img
@@ -158,4 +169,14 @@ block content
 						.type-icon__img
 							+svg('ic-delivery','ic-delivery', '37', '35')
 						.type-icon__name ic-delivery
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-tick-circle','ic-tick-circle', '35', '35')
+						.type-icon__name ic-tick-circle
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-play','ic-play', '24', '28')
+						.type-icon__name ic-play
 

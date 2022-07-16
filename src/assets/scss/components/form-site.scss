@@ -1,0 +1,238 @@
+/*-------------- form-site -----------------*/
+.form-site{
+	position: relative;
+
+	&__title{
+		font-family: $font-exo;
+		@include font(none, bold, 3.2rem, 1.3, none);
+		text-align: center;
+		margin-bottom: 12px;
+	}
+
+	&__text{
+		@include font(none, none, 1.8rem, 1.6, none);
+		text-align: center;
+		margin-bottom: 36px;
+	}
+
+	&__content{margin-top: 36px;}
+	&__item{margin-bottom: 22px;}
+	&__item.error{position: relative;}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	textarea{
+		display: inline-flex;
+		align-items: center;
+		height: 6rem;
+		width: 100%;
+		font-family: $font-site;
+		@include font(none, none, 1.5rem, 1.2, $color-text);
+		padding: 0 20px;
+		border: 1px solid rgba(255, 255, 255, 0.22);
+		background: transparent;
+		outline: none;
+		margin: 0;
+		box-shadow: none;
+		transition: border 0.2s ease 0s;
+	}
+
+	textarea{
+		height: 16rem;
+		line-height: 1.6;
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="email"]:focus,
+	input[type="password"]:focus,
+	textarea:focus{
+		border-color: $color-blue;
+	}
+
+	input[type="text"]::placeholder,
+	input[type="number"]::placeholder,
+	input[type="email"]::placeholder,
+	input[type="password"]::placeholder,
+	textarea::placeholder{
+		color: #ADB4BE;
+		opacity: 1;
+	}
+
+	&__item.error{
+		input[type="text"],
+		input[type="number"],
+		input[type="email"],
+		input[type="password"],
+		textarea{
+			border-color: $color-red;
+		}
+
+		input[type="text"]::placeholder,
+		input[type="number"]::placeholder,
+		input[type="email"]::placeholder,
+		input[type="password"]::placeholder,
+		textarea::placeholder{
+			color: $color-red;
+			opacity: 1;
+		}
+	}
+
+	.form-site-msg-error{
+		@include font(none, none, 1.4rem, 1.2, $color-red);
+		margin-top: 5px;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	&__btn{
+		margin-top: 22px;
+
+		.btn{width: 100%;}
+	}
+
+	&_dark{
+		color: #fff;
+
+		input[type="text"],
+		input[type="email"],
+		input[type="number"],
+		input[type="password"],
+		textarea{
+			color: #fff;
+		}
+	}
+
+	&__polit{
+		@include font(none, none, 1.3rem, 1.8, none);
+		text-align: center;
+		margin-top: 22px;
+
+		a{
+			color: #ADB4BE;
+			text-decoration: none;
+
+			&:hover{color: $color-blue;}
+		}
+	}
+}
+
+.success-alert{
+	width: 500px;
+	text-align: center;
+
+	&__icon{
+		margin-bottom: 3rem;
+
+		.icon{fill: $color-blue;}
+	}
+
+	&__title{
+		@include font(none, 600, 3.2rem, 1.6, none);
+	}
+
+	&__text{
+		max-width: 350px;
+		@include font(none, none, 1.7rem, 1.6, none);
+		margin: 2rem auto 0;
+	}
+}
+
+.popup-form{
+	width: 500px;
+	max-width: 100%;
+}
+
+
+// @media (min-width: 768px) {
+// 	.form-site{
+// 		&__content{
+// 			display: flex;
+// 			flex-wrap: wrap;
+// 			margin-left: -10px;
+// 			margin-right: -10px;
+// 		}
+
+// 		&__title{
+// 			font-size: 3rem;
+// 			margin-bottom: 38px;
+// 		}
+
+// 		&__text{margin-bottom: 44px;}
+
+// 		&__item{
+// 			width: calc(100% - 20px);
+// 			margin-left: 10px;
+// 			margin-right: 10px;
+// 			margin-bottom: 25px;
+// 		}
+		
+// 		&__item_half{width: calc(50% - 20px);}
+// 		&__col{width: 50%;}
+
+// 		input[type="text"],
+// 		input[type="email"],
+// 		input[type="number"],
+// 		input[type="password"],
+// 		textarea{
+// 			font-size: 1.6rem;
+// 		}
+
+// 		textarea{height: 12.5rem;}
+
+// 		&__btn{
+// 			text-align: left;
+// 			.btn{width: auto;}
+// 		}
+
+// 		&__item_full-height{
+// 			display: flex;
+// 			flex-direction: column;
+// 			height: calc(100% - 25px);
+// 		}
+
+// 		&__item_full-height &__field,
+// 		&__item_full-height textarea{
+// 			height: 100%;
+// 		}
+
+// 		&__polit{margin-top: 8px;}
+// 	}
+
+// 	.success-alert{
+// 		&__title{font-size: 3rem;}
+// 		&__text{font-size: 1.6rem;}
+// 	}
+
+// 	.form-page{
+// 		padding: 77px 0;
+
+// 		.form-site{
+// 			&__title{
+// 				text-align: left;
+// 				margin-bottom: 22px;
+// 			}
+// 		}
+// 	}
+// }
+
+// @media (min-width: 1160px) {
+// 	.form-site{
+// 		&__col{width: calc(50% - 19px);}
+// 	}
+// }
+
+// @media (min-width: 1340px) {
+// 	.form-page{
+// 		&::before{background-position: top right;}
+// 	}
+
+// 	.form-site{
+// 		&__text{max-width: 1010px;}
+// 	}
+// }

@@ -1,0 +1,47 @@
+/*-------------- tabs-page -----------------*/
+.tabs-page{
+	&__list,
+	&__item{
+		@include reset-list;
+	}
+
+	&__list{display: flex;}
+
+	&__item{
+		flex-basis: 100%;
+		display: inline-block;
+		@include font(none, none, 1.7rem, 1.6, #464646);
+		padding: 8px 45px;
+		border-bottom: 2px solid #e2e2e2;
+		transition: all 0.3s ease;
+		cursor: pointer;
+	}
+
+	&__item:hover,
+	&__item.active{
+		color: $color-text;
+		border-color: $color-red;
+	}
+
+	&__content{padding-top: 40px;}
+	&__content-item{display: none;}
+	&__content-item.active{display: block;}
+}
+
+// @media (max-width: 767px) {
+// 	.tabs-page{
+// 		&__list{
+// 			flex-wrap: nowrap;
+// 			margin-left: -20px;
+// 			margin-right: -20px;
+// 			overflow-x: auto;
+// 		}
+
+// 		&__item{
+// 			font-size: 1.4rem;
+// 			padding: 10px 20px;
+// 		}
+
+// 		&__content{padding: 30px 0;}
+// 	}
+// }

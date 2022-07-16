@@ -1,0 +1,32 @@
+/*-------------- send-request -----------------*/
+.send-request{
+	&__content-wrap{
+		position: relative;
+
+		&::before{
+			content: '';
+			width: 566px;
+			height: 566px;
+			background: url(../img/lines-long.png) no-repeat center;
+			background-size: contain;
+			position: absolute;
+			bottom: 0;
+			right: -60px;
+		}
+	}
+
+	&__content{
+		clip-path: polygon(160px 0, 100% 0, 100% calc(100% - 160px), calc(100% - 160px) 100%, 0 100%, 0 160px);
+		background: linear-gradient(260.91deg, #2E3540 0%, #3A4860 100%), linear-gradient(266.48deg, #00AFF3 0%, #58DCF8 100.36%);
+		color: #fff;
+		padding: 100px 0;
+	}
+
+	&__img{
+		max-width: 58%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: -60px;
+	}
+}
