@@ -1,0 +1,32 @@
+/*-------------- unwrap-block -----------------*/
+.unwrap-block{
+	&__head{
+		display: flex;
+		justify-content: space-between;
+		@include font(none, 600, 1.7rem, 1.6, none);
+		padding: 26px 0;
+		border-bottom: 1px solid #e2e2e2;
+		position:relative;
+		cursor:pointer;
+	}
+
+	&__btn{
+		margin-left: 20px;
+		
+		.icon{
+			fill: $color-blue;
+			transition: all 0.2s ease 0s;
+		}
+	}
+
+	&.opened &__head{border-color: $color-blue;}
+	&.opened &__btn .icon{transform: rotate(135deg);}
+
+	&__content{
+		display: none;
+		padding: 30px;
+		font-size: 1.5rem;
+
+		p:last-child{margin-bottom: 0;}
+	}
+}

@@ -245,3 +245,18 @@ if($('.js-left-menu-btn').length){
 		$('.js-left-menu').slideToggle(300);
 	});
 }
+
+// unwrap block
+if($('.js-unwrap-block').length){
+	$('.js-unwrap-head').on('click',function(event){
+		event.preventDefault();
+		var $parent = $(this).parents('.js-unwrap-block');
+		
+		$parent.toggleClass('opened');
+		if($parent.hasClass('opened')){
+			$parent.children('.js-unwrap-content').slideDown(400);
+		}else{
+			$parent.children('.js-unwrap-content').slideUp(400);
+		}
+	});
+}
