@@ -1,0 +1,9 @@
+/*-------------- works-list -----------------*/
+.works-list{
+	&__item{
+		display: block;
+		margin-bottom: 30px;
+		text-decoration: none;
+		cursor: zoom-in;
+	}
+}

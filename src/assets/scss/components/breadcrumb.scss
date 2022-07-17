@@ -1,0 +1,36 @@
+/*-------------- breadcrumb -----------------*/
+.breadcrumb-wrap{
+	border-bottom: 1px solid #e2e2e2;
+	margin-bottom: 17px;
+}
+
+.breadcrumb{
+	&,
+	&__item{
+		@include reset-list;
+	}
+
+	&{padding: 40px 0 12px;}
+
+	&__item{
+		display: inline;
+		@include font(none, none, 1.5rem, 1.2, #000);
+		margin-top: 5px;
+		margin-bottom: 5px;
+
+		a{
+			color: #464646;
+			text-decoration: none;
+			transition: color 0.2s ease 0s;
+		}
+
+		a:hover{color: $color-blue;}
+	}
+
+	&__item:not(:last-child)::after{
+		content: '—';
+		margin-left: 11px;
+		margin-right: 11px;
+		color: #464646;
+	}
+}

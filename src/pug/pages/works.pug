@@ -1,0 +1,66 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Наши работы';
+	- var h1 = 'Наши работы';
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Наши работы'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	.container
+		.row
+			.col-lg-3
+				.left-menu-wrap
+					span.btn.d-lg-none.js-left-menu-btn Меню раздела
+
+					ul.left-menu.js-left-menu
+						-
+							var list=[
+								{text:'Гальваническое цинкование'},
+								{text:'Горячее цинкование', status:'active'},
+								{text:'Оцинкованный прокат'},
+								{text:'Термодиффузионное цинкование'},
+								{text:'Желтый цинк'},
+							]
+						each item in list
+							li.left-menu__item(class=item.status?'active':'')
+								a(href="#").left-menu__link= item.text
+
+			.col-lg-9
+				.works-list
+					.row
+						-
+							var list=[
+								{img:'work1.jpg'},
+								{img:'work2.jpg'},
+								{img:'work3.jpg'},
+								{img:'work4.jpg'},
+								{img:'work5.jpg'},
+								{img:'work6.jpg'},
+								{img:'work7.jpg'},
+								{img:'work8.jpg'},
+							]
+						each item in list
+							.col-sm-6
+								a(data-fancybox='works', data-src='assets/img/'+item.img).works-list__item
+									img(src='assets/img/'+item.img)
+
+				.pager
+					span.pager__nav.disable
+						+svg('ic-arrow-left','ic-arrow-left', '6', '12')
+
+					a.pager__item.active(href='#') 1
+					a.pager__item(href='#') 2
+					a.pager__item(href='#') 3
+					a.pager__item(href='#') 4
+
+					a.pager__nav(href="")
+						+svg('ic-arrow-right','ic-arrow-right', '6', '12')

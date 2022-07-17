@@ -238,3 +238,10 @@ if($('.js-open-contacts').length){
 		$('.js-header-contacts').removeClass('active');
 	});
 }
+
+// Открыть/Закрыть левое меню
+if($('.js-left-menu-btn').length){
+	$('.js-left-menu-btn').on('click', function(){
+		$('.js-left-menu').slideToggle(300);
+	});
+}
