@@ -59,3 +59,27 @@
 		margin-top: 22px;
 	}
 }
+
+@media (max-width: 991px) {
+	.step-item{
+		width: 50%;
+	}
+}
+
+@media (max-width: 767px) {
+	.step-list{
+		.step-item{
+			width: auto;
+			margin-right: 0;
+		}
+	}
+
+	.step-item{
+		padding: 30px 30px 30px 70px;
+
+		&__num{
+			width: 50px;
+			font-size: 2rem;
+		}
+	}
+}

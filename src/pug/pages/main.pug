@@ -20,7 +20,7 @@ block content
 							.top-slider__item(style="background-image: url(assets/img/"+item.img+")")
 								.container
 									.row
-										.col-6
+										.col-md-6
 											.top-slider__title= item.title
 
 											.top-slider__info
@@ -61,7 +61,7 @@ block content
 		.sect-list__content
 			.container
 				.row
-					.col-6
+					.col-lg-6
 						.sect-item
 							.sect-item__img-wrap
 								.sect-item__img(style="background-image: url(assets/img/sect1.jpg)")
@@ -110,7 +110,7 @@ block content
 														li.sect-menu__sub-item
 															a(href="№").sect-menu__sub-link= sub.text
 					
-					.col-6
+					.col-lg-6
 						.sect-item
 							.sect-item__img-wrap
 								.sect-item__img(style="background-image: url(assets/img/sect2.jpg)")
@@ -134,7 +134,7 @@ block content
 										li.sect-menu__item.js-sect-menu-item
 											a(href="#").sect-menu__link= item.text
 
-					.col-6
+					.col-lg-6
 						.sect-item
 							.sect-item__img-wrap
 								.sect-item__img(style="background-image: url(assets/img/sect3.jpg)")
@@ -159,7 +159,7 @@ block content
 										li.sect-menu__item.js-sect-menu-item
 											a(href="#").sect-menu__link= item.text
 											
-					.col-6
+					.col-lg-6
 						.sect-item
 							.sect-item__img-wrap
 								.sect-item__img(style="background-image: url(assets/img/sect4.jpg)")
@@ -205,41 +205,42 @@ block content
 	section.prices-wrap.m-indent
 		.container
 			.row
-				.col-8
+				.col-md-8
 					h2 Стоимость изготовления конструкций из&nbsp;металла
 
 			.row
 				.col-12
 
-					table.table-site
-						tr
-							th Наименование конструкций из металла
-							th.text-right Ед. изм.
-							th.text-right Цена
-
-						-
-							var list=[
-								{title:'Металлоконструкция', text:'тонна', price:'от 45 000 ₽'},
-								{title:'Металлоконструкции из нержавейки и алюминия', text:'тонна', price:'Договорная'},
-								{title:'ЛМК', text:'тонна', price:'Договорная'},
-								{title:'Фермы', text:'тонна', price:'Договорная'},
-								{title:'Прогонны', text:'тонна', price:'от 20 700 ₽'},
-								{title:'Колонны', text:'тонна', price:'от 9 000 ₽'},
-								{title:'Сварная балка', text:'тонна', price:'от 11 700 ₽'},
-							]
-						each item in list
+					.table-site-wrap
+						table.table-site
 							tr
-								td= item.title
-								td.text-right= item.text
-								td.text-right= item.price
-	
+								th Наименование конструкций из металла
+								th.text-right Ед. изм.
+								th.text-right Цена
+
+							-
+								var list=[
+									{title:'Металлоконструкция', text:'тонна', price:'от 45 000 ₽'},
+									{title:'Металлоконструкции из нержавейки и алюминия', text:'тонна', price:'Договорная'},
+									{title:'ЛМК', text:'тонна', price:'Договорная'},
+									{title:'Фермы', text:'тонна', price:'Договорная'},
+									{title:'Прогонны', text:'тонна', price:'от 20 700 ₽'},
+									{title:'Колонны', text:'тонна', price:'от 9 000 ₽'},
+									{title:'Сварная балка', text:'тонна', price:'от 11 700 ₽'},
+								]
+							each item in list
+								tr
+									td= item.title
+									td.text-right= item.text
+									td.text-right= item.price
+		
 	section.send-request.m-indent
 		.st-width
 			.send-request__content-wrap
 				.send-request__content
 					.container
 						.row
-							.col-4.offset-7
+							.col-lg-4.offset-lg-7
 								.js-valid-form
 									form.form-site.form-site_dark
 										.form-site__title Отправить заявку
@@ -298,11 +299,11 @@ block content
 							h2 О нас
 
 					.row
-						.col-5
+						.col-lg-5
 							p Компания «Анкор» осуществляет изготовление металлоконструкций с нанесением на них защитных антикоррозионных покрытий, в том числе методом горячего цинкования на производстве, оснащенном современным оборудованием.
 							p Актуальность проблемы антикоррозионной защиты металлов основывается на необходимости защиты металлических конструкций, сохранения их внешнего вида, а также рационального использования природных ресурсов.
 
-						.col-6.offset-1
+						.col-lg-6.offset-lg-1
 							.player
 								.player__content(style="background-image: url(assets/img/preview-video.jpg)")
 								a(data-fancybox='video-gallery', href='https://www.youtube.com/watch?v=dl16e_mG6hg&t=9s').player__btn

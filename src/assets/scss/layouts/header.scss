@@ -58,9 +58,10 @@
 }
 
 .header-contacts{
-	display: inline-flex;
-	align-items: center;
-	padding-left: 40px;
+	&__content{
+		display: inline-flex;
+		align-items: center;
+	}
 
 	&__icon{
 		flex-shrink: 0;
@@ -81,5 +82,103 @@
 		}
 
 		a:hover{color: $color-blue;}
+	}
+}
+
+@media (max-width: 991px) {
+	.header{
+		&__action{
+			display: inline-flex;
+			align-items: center;
+		}
+
+		&__phone{
+			margin-right: 20px;
+			cursor: pointer;
+			.icon{fill: $color-blue;}
+		}
+	}
+
+	.header-contacts{
+		width: 100%;
+		background: #fff;
+		position: fixed;
+		top: -500px;
+		left: 0;
+		z-index: 100;
+		transition: top 0.3s ease 0s;
+
+		&.active{top: 0;}
+		
+		&__content{
+			display: flex;
+			width: 690px;
+			margin: 0 auto;
+			padding: 30px 50px 30px 0;
+			position: relative;
+		}
+
+		&__close{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			
+			.ic-hamburger{
+				span::before,
+				span::after{
+					background: #a1a1a1;
+				}
+			}
+		}
+	}
+
+	.top-menu{
+		display: block;
+
+		&__item,
+		&__link{
+			font-size: 1.4rem;
+		}
+
+		&__item{
+			margin: 0;
+			padding: 7px 0;
+		}
+
+		&__link{
+			padding-bottom: 0;
+			font-weight: 600;
+
+			&::before,
+			&::after{
+				display: none;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.header-contacts{
+		&__content{
+			display: block;
+			width: auto;
+			padding: 15px 45px;
+			text-align: center;
+		}
+
+		&__icon{display: none;}
+
+		&__item{
+			font-size: 1.7rem;
+			font-weight: 600;
+			margin: 5px 0;
+		}
+
+		&__close{
+			top: 15px;
+			right: 15px;
+			transform: none;
+		}
 	}
 }

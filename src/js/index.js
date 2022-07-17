@@ -21,6 +21,22 @@ if($('.js-works-slider').length){
 		dots: true,
 		prevArrow: '<button id="prev" type="button" class="btn-arr btn-arr_left"><svg class="icon ic-arrow-left" width="6" height="12"><use xlink:href="/assets/sprites/sprite.svg#ic-arrow-left"></use></svg></button>',
 		nextArrow: '<button id="next" type="button" class="btn-arr btn-arr_right"><svg class="icon ic-arrow-right" width="6" height="12"><use xlink:href="/assets/sprites/sprite.svg#ic-arrow-right"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+				}
+			},
+			{
+				breakpoint: 480,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				}
+			},
+		  ]
 	});
 }
 
@@ -176,5 +192,49 @@ if ($('.js-tabs-page').length) {
 				$(this).addClass('inactive');
 			}
 		}
+	});
+}
+
+// Открыть/Закрыть мобильное меню
+$('.js-open-menu').on('click',function(){
+	$('.js-main-menu').addClass('open');
+	$('.js-body').addClass('no-scroll');
+	$('.js-shadow-site').addClass('active');
+});
+
+$('.js-close-menu').on('click',function(){
+	$('.js-main-menu').removeClass('open');
+	$('.js-body').removeClass('no-scroll');
+	$('.js-shadow-site').removeClass('active');
+});
+
+$('.js-shadow-site').on('click',function(){
+	$('.js-main-menu').removeClass('open');
+	$('.js-body').removeClass('no-scroll');
+	$('.js-shadow-site').removeClass('active');
+});
+
+// Открыть/Закрыть пункты меню
+if($('.js-main-menu-arr').length){
+	$('.js-main-menu-arr').on('click', function(){
+		$(this).toggleClass('active');
+		$(this).closest('.js-main-menu-item').children('.js-main-menu-sub').slideToggle(300);
+	});
+}
+
+// Открыть/Закрыть контакты из шапки
+if($('.js-open-contacts').length){
+	$('.js-open-contacts').on('click',function(){
+		$('.js-header-contacts').addClass('active');
+	});
+
+	$('.js-close-contacts').on('click',function(){
+		$('.js-header-contacts').removeClass('active');
+	});
+
+	$(document).on('click', function (e) {
+		if ($(e.target).closest('.js-header-contacts').length) {return;}
+		if ($(e.target).closest('.js-open-contacts').length) {return;}
+		$('.js-header-contacts').removeClass('active');
 	});
 }

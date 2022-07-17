@@ -8,6 +8,12 @@ body{
 
 body{font-size: 1.7rem;}
 
+body.no-scroll{
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
 *,
 *:before,
 *:after {
@@ -90,6 +96,20 @@ main{
 	margin: 0 auto;
 }
 
+.shadow-site{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 980;
+
+	&.active{display: block;}
+}
+
+
 .btn,
 input[type="submit"].btn,
 button.btn{
@@ -159,3 +179,34 @@ input[type="submit"].btn:hover{background: linear-gradient(270deg, #7ADAFF 0%, #
 
 .mt-indent{margin-top: 120px;}
 .mb-indent{margin-bottom: 120px;}
+
+@media (max-width: 991px) {
+	.m-indent{
+		margin-top: 80px;
+		margin-bottom: 80px;
+	}
+	
+	.mt-indent{margin-top: 80px;}
+	.mb-indent{margin-bottom: 80px;}
+}
+
+@media (max-width: 767px) {
+	body{font-size: 1.5rem;}
+
+	h1,.h1{font-size: 2.6rem;}
+	h2,.h2{font-size: 2.6rem;}
+	h3,.h3{font-size: 2.4rem;}
+	h4,.h4{font-size: 2rem;}
+	h5,.h5{font-size: 1.8rem;}
+
+	.m-indent{
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	
+	.mt-indent{margin-top: 40px;}
+	.mb-indent{margin-bottom: 40px;}
+
+	main{padding-bottom: 60px;}
+	.last-elem{margin-bottom: -60px;}
+}

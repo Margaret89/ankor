@@ -128,3 +128,10 @@
 	&__sub-item:hover &__sub-link{color: $color-blue;}
 	&__sub-item:hover::before{background: $color-blue;}
 }
+
+@media (max-width: 767px) {
+	.sect-item{
+		&__img-wrap{display: none;}
+		&__content{padding: 30px 15px;}
+	}
+}

@@ -7,7 +7,7 @@ header.header
 						a(href="#")
 							img(src="assets/img/logo.svg", alt="")
 
-					ul.top-menu
+					ul.top-menu.d-none.d-lg-flex
 						-
 							var list=[
 								{text:'О компании'},
@@ -19,15 +19,43 @@ header.header
 							li.top-menu__item(class=item.status?'active':'')
 								a(href="#").top-menu__link= item.text
 
-					.header-contacts
-						.header-contacts__icon
-							+svg('ic-phone','ic-phone', '18', '18')
-						.header-contacts__item
-							a(href="tel:+78127151392") (812) 715-13-92
-						.header-contacts__item
-							a(href="tel:+78129711213") (812) 971-12-13
+					.header-contacts.js-header-contacts
+						.header-contacts__content
+							.header-contacts__icon
+								+svg('ic-phone','ic-phone', '18', '18')
+							.header-contacts__item
+								a(href="tel:+78127151392") (812) 715-13-92
+							.header-contacts__item
+								a(href="tel:+78129711213") (812) 971-12-13
+							.header-contacts__close.js-close-contacts
+								.ic-hamburger.active
+									span
 
-				nav.main-menu
+					.header__action.d-lg-none
+						.header__phone.js-open-contacts
+							+svg('ic-call','ic-call', '24', '24')
+
+						.ic-hamburger.js-open-menu
+							span
+
+				nav.main-menu.js-main-menu
+					.main-menu__close.js-close-menu
+						.ic-hamburger.active
+							span
+
+					ul.top-menu.d-lg-none
+						-
+							var list=[
+								{text:'О компании'},
+								{text:'Наши работы', status:'active'},
+								{text:'Цены'},
+								{text:'Контакты'},
+							]
+						each item in list
+							li.top-menu__item(class=item.status?'active':'')
+								a(href="#").top-menu__link= item.text
+
+
 					ul.main-menu__list
 						-
 							var list=[
@@ -87,22 +115,22 @@ header.header
 								},
 							]
 						each item in list
-							li.main-menu__item
+							li.main-menu__item.js-main-menu-item
 								a.main-menu__link(href="#", class=item.status?'active':'')= item.text
-									span.main-menu__arr
+									span.main-menu__arr.js-main-menu-arr
 										+svg('ic-arrow-down','ic-arrow-down', '11', '7')
 								
 								if(item.sub)
-									ul.main-menu__sub
+									ul.main-menu__sub.js-main-menu-sub
 										each sub in item.sub
-											li.main-menu__sub-item
+											li.main-menu__sub-item.js-main-menu-item
 												a(href="#").main-menu__sub-link= sub.text
-													span.main-menu__sub-arr
+													span.main-menu__sub-arr.js-main-menu-arr
 														if(sub.sub)
 															+svg('ic-arrow-down','ic-arrow-down', '11', '7')
 
 												if(sub.sub)
-													ul.main-menu__sub
+													ul.main-menu__sub.js-main-menu-sub
 														each sub2 in sub.sub
 															li.main-menu__sub-item
 																a(href="#").main-menu__sub-link= sub2

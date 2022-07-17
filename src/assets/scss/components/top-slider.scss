@@ -84,10 +84,12 @@
 		.btn-arr{
 			position: static;
 			transform: none;
+			background: transparent;
 
 			&:not(:last-child){margin-right: 12px;}
 
 			.icon{fill: #fff;}
+			&:hover{background: $color-blue;}
 		}
 	}
 
@@ -104,5 +106,45 @@
 
 			li{flex-basis: 100%;}
 		}
+	}
+}
+
+@media (max-width: 1750px) {
+	.top-slider{
+		&__content-wrap::before{left: 0;}
+		&__content-wrap::after{right: 0;}
+	}
+}
+
+@media (max-width: 1240px) {
+	.top-slider{
+		&__content{
+			clip-path: polygon(100px 0, 100% 0, 100% calc(100% - 100px), calc(100% - 100px) 100%, 0 100%, 0 100px);
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.top-slider{
+		&__content-wrap{
+			&::before,
+			&::after{
+				display: none;
+			}
+		}
+
+		&__content{
+			clip-path: polygon(50px 0, 100% 0, 100% calc(100% - 50px), calc(100% - 50px) 100%, 0 100%, 0 50px);
+		}
+
+		&__title{font-size: 3.2rem;}
+		&__text{font-size: 1.5rem;}
+
+		&__item{
+			min-height: 500px;
+			padding: 80px 0;
+		}
+
+		&__arr{bottom: 22px;}
 	}
 }

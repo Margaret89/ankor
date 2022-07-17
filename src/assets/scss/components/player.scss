@@ -58,3 +58,17 @@
 		&:hover::before{opacity: 1;}
 	}
 }
+
+@media (max-width: 767px) {
+	.player{
+		&__btn{
+			width: 70px;
+			height: 70px;
+
+			.icon{
+				width: 17px;
+				height: 20px;
+			}
+		}
+	}
+}

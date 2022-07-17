@@ -5,7 +5,7 @@
 	justify-content: center;
 	width: 78px;
 	height: 48px;
-	background: transparent;
+	background: #fff;
 	border: 1px solid #e2e2e2;
 	margin: 0;
 	padding: 0;
@@ -16,6 +16,7 @@
 	@include top-center;
 	cursor: pointer;
 	transition: all 0.2s ease 0s;
+	z-index: 2;
 
 	.icon{
 		fill: #000;
@@ -66,5 +67,12 @@
 	button:hover,
 	.slick-active button{
 		background: $color-blue;
+	}
+}
+
+@media (max-width: 1500px) {
+	.btn-arr{
+		&_left{left: 0;}
+		&_right{right: 0;}
 	}
 }
