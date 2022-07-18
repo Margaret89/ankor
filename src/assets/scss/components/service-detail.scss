@@ -1,2 +1,27 @@
 /*-------------- service-detail -----------------*/
-.service-detail{}
+.s-detail-top{
+	display: flex;
+
+	&__img{
+		flex-shrink: 0;
+		width: 51%;
+		margin-right: 60px;
+	}
+}
+
+@media (max-width: 1240px) {
+	.s-detail-top{
+		&__img{margin-right: 30px;}
+	}
+}
+
+@media (max-width: 767px) {
+	.s-detail-top{
+		display: block;
+
+		&__img{
+			width: auto;
+			margin: 0 0 30px;
+		}
+	}
+}

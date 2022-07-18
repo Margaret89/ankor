@@ -1,4 +1,6 @@
 /*-------------- cat-menu -----------------*/
+.cat-menu-menu-wrap{margin-top: 8px;}
+
 .cat-menu{
 	border: 1px solid #e2e2e2;
 
@@ -78,4 +80,15 @@
 		top: 16px;
 		left: -15px;
 	}
+}
+
+@media (max-width: 991px) {
+	.cat-menu-menu-wrap{
+		margin-top: 0;
+		margin-bottom: 30px;
+
+		.btn{width: 100%;}
+	}
+
+	.cat-menu{display: none;}
 }

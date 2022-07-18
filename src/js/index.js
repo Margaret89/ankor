@@ -279,6 +279,13 @@ if($('.js-left-menu-btn').length){
 	});
 }
 
+// Открыть/Закрыть каталожное меню
+if($('.js-cat-menu-btn').length){
+	$('.js-cat-menu-btn').on('click', function(){
+		$('.js-cat-menu').slideToggle(300);
+	});
+}
+
 // unwrap block
 if($('.js-unwrap-block').length){
 	$('.js-unwrap-head').on('click',function(event){
