@@ -1,0 +1,36 @@
+/*-------------- lists -----------------*/
+.list-dot{
+	list-style: none;
+
+	li{padding-left: 24px;}
+
+	li::before{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background: $color-text;
+		margin-right: 10px;
+		margin-left: -14px;
+	}
+}
+
+.list-square{
+	list-style: none;
+
+	li{padding-left: 24px;}
+
+	li::before{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 4px;
+		height: 4px;
+		background: $color-blue;
+		margin-right: 10px;
+		margin-left: -14px;
+	}
+}
+

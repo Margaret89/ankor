@@ -47,7 +47,7 @@ block content
 									+svg('ic-plus','ic-plus', '18', '18')
 
 							.unwrap-block__content.js-unwrap-content
-								if(item.long)
+								if(item.text == 'long')
 									p Возврат денежных средств за пропущенные занятия по болезни или в связи с отпуском осуществляется по заявлению установленного образца и оригиналу медицинской справки, которые предоставляются самостоятельно в главный офис Федерации по адресу: г. Челябинск, ул. Чайковского 75, либо в электронном виде по данной форме.
 									p 
 										b Возможен отказ в возврате денежных средств в следующих случаях:
@@ -60,3 +60,77 @@ block content
 								else
 									|Текст
 					
+	section.reviews-wrap.m-indent
+		.st-width
+			.reviews-wrap__content
+				.container
+					.row
+						.col-12
+							h2 Отзывы клиентов
+
+							.review-list
+								.row
+									.col-lg-6
+										.review-item
+											.review-item__img-wrap
+												.review-item__img
+													img(src="assets/img/author1.jpg", alt="")
+											.review-item__content
+												.review-item__text
+													p “Самостоятельное обучение трейдингу отняло у меня пару месяцев и не принесло стабильных результатов.
+													p После прохождения этого курса я могу лучше анализировать процессы купли и продажи ценных бумаг, отправлять приказы о продаже по найлучшему курсу, следить за количеством лотов и получать прибыль.”
+												.review-item__author Александр Добрев
+
+									.col-lg-6
+										.review-item
+											.review-item__img-wrap
+												.review-item__img
+													img(src="assets/img/author2.jpg", alt="")
+											.review-item__content
+												.review-item__text
+													p “После прохождения этого курса я могу лучше анализировать процессы купли и продажи ценных бумаг, отправлять приказы о продаже по найлучшему курсу, следить за количеством лотов и получать прибыль.”
+												.review-item__author Андрей Иванов
+
+									.col-lg-6
+										.review-item
+											.review-item__img-wrap
+												.review-item__img
+													img(src="assets/img/author3.jpg", alt="")
+											.review-item__content
+												.review-item__text
+													p “После прохождения этого курса я могу лучше анализировать процессы купли и продажи ценных бумаг, отправлять приказы о продаже по найлучшему курсу, следить за количеством лотов и получать прибыль.”
+												.review-item__author Андрей Иванов
+
+									.col-lg-6
+										.review-item
+											.review-item__img-wrap
+												.review-item__img
+													img(src="assets/img/author4.jpg", alt="")
+											.review-item__content
+												.review-item__text
+													p “Самостоятельное обучение трейдингу отняло у меня пару месяцев и не принесло стабильных результатов.
+													p После прохождения этого курса я могу лучше анализировать процессы купли и продажи ценных бумаг, отправлять приказы о продаже по найлучшему курсу, следить за количеством лотов и получать прибыль.”
+												.review-item__author Александр Добрев
+
+	section.certificates-wrap
+		.container
+			.row
+				.col-12
+					h2 Сертификаты
+
+					.certificates-list
+						.row
+							-
+								var list=[
+									{img:'certificate1.jpg'},
+									{img:'certificate2.jpg'},
+									{img:'certificate3.jpg'},
+									{img:'certificate4.jpg'},
+									{img:'certificate5.jpg'},
+									{img:'certificate6.jpg'},
+								]
+							each item in list
+								.col-6.col-md-4.col-lg-2
+									.certificates-item
+										a(data-fancybox='certificates', data-src='assets/img/'+item.img).certificates-item__content
+											img(src='assets/img/'+item.img)

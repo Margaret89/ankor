@@ -1,16 +1,18 @@
 /*-------------- unwrap-block -----------------*/
 .unwrap-block{
+	border-bottom: 1px solid #e2e2e2;
+
 	&__head{
 		display: flex;
 		justify-content: space-between;
 		@include font(none, 600, 1.7rem, 1.6, none);
 		padding: 26px 0;
-		border-bottom: 1px solid #e2e2e2;
 		position:relative;
 		cursor:pointer;
 	}
 
 	&__btn{
+		flex-shrink: 0;
 		margin-left: 20px;
 		
 		.icon{
@@ -19,14 +21,27 @@
 		}
 	}
 
-	&.opened &__head{border-color: $color-blue;}
 	&.opened &__btn .icon{transform: rotate(135deg);}
 
 	&__content{
 		display: none;
-		padding: 30px;
+		max-width: 1000px;
 		font-size: 1.5rem;
+		padding-bottom: 25px;
 
 		p:last-child{margin-bottom: 0;}
+	}
+}
+
+h2 + .unwrap-block{margin-top: -27px;}
+
+@media (max-width: 767px) {
+	.unwrap-block{
+		&__head{
+			font-size: 1.5rem;
+			padding: 18px 0;
+		}
+
+		&__content{font-size: 1.4rem;}
 	}
 }

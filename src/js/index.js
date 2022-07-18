@@ -1,5 +1,35 @@
 import {$, Inputmask, Fancybox} from './common';
 
+var widthWindow = $(window).width();
+window.deviceType = 'desktop';
+var changeDevice = false;
+
+if(widthWindow < 768){
+	window.deviceType = 'mobile';
+}else if(widthWindow >= 768 && widthWindow < 992){
+	window.deviceType = 'tablet';
+}else{
+	window.deviceType = 'desktop';
+}
+
+$(window).on('resize', function(){
+	widthWindow = $(window).width();
+
+	if(widthWindow < 768 && window.deviceType == 'tablet'){
+		window.deviceType = 'mobile';
+		changeDevice = true;
+	}else if((widthWindow >= 768 && window.deviceType == 'mobile') ||(widthWindow < 992 && window.deviceType == 'desktop')){
+		window.deviceType = 'tablet';
+		changeDevice = true;
+	}else if(widthWindow >= 992 && window.deviceType == 'tablet'){
+		window.deviceType = 'desktop';
+		changeDevice = true;
+	}else{
+		changeDevice = false;
+	}
+});
+
+
 // Верхний слайдер
 if($('.js-top-slider').length){
 	$('.js-top-slider').slick({
@@ -216,9 +246,12 @@ $('.js-shadow-site').on('click',function(){
 
 // Открыть/Закрыть пункты меню
 if($('.js-main-menu-arr').length){
-	$('.js-main-menu-arr').on('click', function(){
-		$(this).toggleClass('active');
-		$(this).closest('.js-main-menu-item').children('.js-main-menu-sub').slideToggle(300);
+	$('.js-main-menu-arr').on('click', function(e){
+		if(window.deviceType == 'tablet' || window.deviceType == 'mobile'){
+			e.preventDefault();
+			$(this).toggleClass('active');
+			$(this).closest('.js-main-menu-item').children('.js-main-menu-sub').slideToggle(300);
+		}
 	});
 }
 
@@ -258,5 +291,22 @@ if($('.js-unwrap-block').length){
 		}else{
 			$parent.children('.js-unwrap-content').slideUp(400);
 		}
+	});
+}
+
+// Оформление нестандартного селекта
+if($('.js-select').length){
+	$('.js-select').select2({
+		minimumResultsForSearch: -1,
+		placeholder: $(this).data('placeholder')
+	});
+}
+
+// Открыть/Закрыть пункты каталожного меню
+if($('.js-cat-menu-arr').length){
+	$('.js-cat-menu-arr').on('click', function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		$(this).closest('.js-cat-menu-item').children('.js-cat-menu-sub').slideToggle(300);
 	});
 }

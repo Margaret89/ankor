@@ -36,6 +36,8 @@ p{
 	margin-bottom: 2rem;
 }
 
+ul, ol{margin-bottom: 2rem;}
+
 h1,.h1,
 h2,.h2,
 h3,.h3,
@@ -180,6 +182,14 @@ input[type="submit"].btn:hover{background: linear-gradient(270deg, #7ADAFF 0%, #
 .mt-indent{margin-top: 120px;}
 .mb-indent{margin-bottom: 120px;}
 
+.m-small-indent{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.mt-small-indent{margin-top: 60px;}
+.mb-small-indent{margin-bottom: 60px;}
+
 @media (max-width: 991px) {
 	.m-indent{
 		margin-top: 80px;
@@ -188,16 +198,29 @@ input[type="submit"].btn:hover{background: linear-gradient(270deg, #7ADAFF 0%, #
 	
 	.mt-indent{margin-top: 80px;}
 	.mb-indent{margin-bottom: 80px;}
+
+	.m-small-indent{
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
+	
+	.mt-small-indent{margin-top: 40px;}
+	.mb-small-indent{margin-bottom: 40px;}
 }
 
 @media (max-width: 767px) {
 	body{font-size: 1.5rem;}
 
-	h1,.h1{font-size: 2.6rem;}
-	h2,.h2{font-size: 2.6rem;}
+	.h1, .h2, h1, h2{
+		font-size: 2.6rem;
+		margin-bottom: 3rem;
+	}
+
 	h3,.h3{font-size: 2.4rem;}
 	h4,.h4{font-size: 2rem;}
 	h5,.h5{font-size: 1.8rem;}
+
+	ol, p, ul{margin-bottom: 1.5rem;}
 
 	.m-indent{
 		margin-top: 40px;
@@ -206,6 +229,14 @@ input[type="submit"].btn:hover{background: linear-gradient(270deg, #7ADAFF 0%, #
 	
 	.mt-indent{margin-top: 40px;}
 	.mb-indent{margin-bottom: 40px;}
+
+	.m-small-indent{
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	
+	.mt-small-indent{margin-top: 30px;}
+	.mb-small-indent{margin-bottom: 30px;}
 
 	main{padding-bottom: 60px;}
 	.last-elem{margin-bottom: -60px;}

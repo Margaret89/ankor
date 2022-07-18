@@ -1,0 +1,81 @@
+/*-------------- cat-menu -----------------*/
+.cat-menu{
+	border: 1px solid #e2e2e2;
+
+	&,
+	&__item,
+	&__sub,
+	&__sub-item{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__item{padding: 18px 20px;}
+
+	&__item:not(:last-child){border-bottom: 1px solid #e2e2e2;}
+
+	&__link{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include font(none, 600, 1.7rem, 1.4, $color-text);
+		text-decoration: none;
+	}
+
+	&__link:hover,
+	&__link.active{
+		color: $color-blue;
+	}
+
+	&__arr,
+	&__sub-arr{
+		flex-shrink: 0;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+		margin-left: 7px;
+	}
+
+	&__sub{
+		display: none;
+		margin-top: 10px;
+	}
+
+	&__sub-item{
+		padding: 7px 0;
+		position: relative;
+	}
+
+	&__sub-link{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include font(none, none, 1.5rem, 1.6, #464646);
+		text-decoration: none;
+		transition: all 0.2s ease 0s;
+	}
+
+	&__sub-link:hover,
+	&__sub-link.active{
+		color: $color-blue;
+	}
+
+	&__sub &__sub{padding-left: 20px;}
+	&__sub &__sub &__sub-link{font-size: 1.3rem}
+
+	&__sub &__sub &__sub-item::before{
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		width: 3px;
+		height: 3px;
+		border-radius: 50%;
+		background: #464646;
+		position: absolute;
+		top: 16px;
+		left: -15px;
+	}
+}

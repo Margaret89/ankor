@@ -41,6 +41,9 @@ block content
 				p <span class="code">m-indent</span> Верхний и нижний отступ 120px
 				p <span class="code">mt-indent</span> Верхний отступ 120px
 				p <span class="code">mb-indent</span> Нижний отступ 120px
+				p <span class="code">m-small-indent</span> Верхний и нижний отступ 60px
+				p <span class="code">mt-small-indent</span> Верхний отступ 60px
+				p <span class="code">mb-small-indent</span> Нижний отступ 60px
 
 				br
 				br
@@ -63,8 +66,67 @@ block content
 				br
 				br
 				br
+				div.h2 Списки
+				ul
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+
+				br
+				br
+				ul.list-dot
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+
+				br
+				br
+				ul.list-square
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+					li Ненумерованный список
+
+				br
+				br
+				ol
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+					li Нумерованный список
+
+				br
+				br
+				br
 				div.h2 Кнопки
 				a.btn(href='#') Кнопка
+
+				br
+				br
+				br
+				.h2 Нестандартный select
+				select.js-select(data-placeholder="Как вы узнали о нас?")
+					option(value="") Как вы узнали о нас?
+					option(value="Вариант 1") Вариант 1
+					option(value="Вариант 2") Вариант 2
+					option(value="Вариант 3") Вариант 3
+					option(value="Вариант 4") Вариант 4
+
+				br
+				br
+				div(style="background: linear-gradient(231.58deg, #2E3540 -86.62%, #3A4860 133.6%), linear-gradient(253.05deg, #00AFF3 -119.04%, #58DCF8 158.91%); padding: 20px")
+					select.select_dark.js-select(data-placeholder="Как вы узнали о нас?")
+						option(value="") Как вы узнали о нас?
+						option(value="Вариант 1") Вариант 1
+						option(value="Вариант 2") Вариант 2
+						option(value="Вариант 3") Вариант 3
+						option(value="Вариант 4") Вариант 4
 
 				br
 				br
@@ -135,6 +197,16 @@ block content
 
 					.type-icon__item
 						.type-icon__img
+							+svg('ic-mail','ic-mail', '20', '16')
+						.type-icon__name ic-mail
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-time','ic-time', '20', '20')
+						.type-icon__name ic-time
+
+					.type-icon__item
+						.type-icon__img
 							+svg('ic-arrow-down','ic-arrow-down', '11', '7')
 						.type-icon__name ic-arrow-down
 
@@ -202,4 +274,9 @@ block content
 						.type-icon__img
 							+svg('ic-plus','ic-plus', '18', '18')
 						.type-icon__name ic-plus
+
+					.type-icon__item
+						.type-icon__img
+							+svg('ic-map','ic-map', '18', '22')
+						.type-icon__name ic-map
 

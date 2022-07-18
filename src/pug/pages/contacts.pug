@@ -1,0 +1,101 @@
+extends ../layout/main
+
+block variables
+	- var title = 'Контакты';
+	- var h1 = 'Контактная информация';
+
+
+block breadcrumb
+	-
+		var breadcrumbs=[
+			{href:'/',name:'Главная страница'},
+			{href:'#',name:'Контакты'},
+		];
+
+	+breadcrumbs(breadcrumbs)
+
+block content
+	section.contact-page
+		.container
+			.row
+				.col-lg-7.col-xl-6
+					.contacts
+						.contacts__item
+							.contacts__icon
+								+svg('ic-map','ic-map', '18', '22')
+							.contacts__text Ленинградская область, Тосненский район, д. Федоровское, Почтовая улица, д. 14
+
+						.contacts__item
+							.contacts__icon
+								+svg('ic-phone','ic-phone', '21', '21')
+							.contacts__text
+								a(href="tel:+78127151392") (812) 715-13-92,
+								| 
+								a(href="tel:+78129711213") 971-12-13
+
+						.contacts__item
+							.contacts__icon
+								+svg('ic-mail','ic-mail', '20', '16')
+							.contacts__text
+								a(href="mailto:info@ankorltd.ru") info@ankorltd.ru
+								br
+								b(style="display: block; margin-top: 10px") Отдел снабжения:
+								a(href="mailto:snab@ankorltd.ru") snab@ankorltd.ru
+
+						.contacts__item
+							.contacts__icon
+								+svg('ic-time','ic-time', '20', '20')
+							.contacts__text Мы работаем ежедневно <b>с 9:00 до 18:00</b>, кроме сб., вс.
+
+					.mt-indent
+						h2 Реквизиты
+
+						.data
+							.data__item ИНН 7820328585
+							.data__item КПП 782001001
+							.data__item ОГРН 1127847218157
+							.data__item ОКПО 38115390
+							.data__item Р/с 40702810890230000035 в ПАО «БАНК «Санкт-Петербург»,
+							.data__item к/с 30101810900000000790
+							.data__item БИК 044030790
+							.data__item Адрес юридический: 196603, г. Санкт-Петербург, г. Пушкин, ул. Саперная, дом 77, литер. А
+						
+					
+				.offset-xl-1.col-lg-5
+					.form-page
+						.js-valid-form
+							form.form-site.form-site_dark
+								.form-site__text Если вы хотите получить больше информации, заполните эту форму. Мы свяжемся с вами в ближайшее время. Пожалуйста, заполните все обязательные поля.
+								
+								.form-site__content
+									.form-site__item.js-form-site-item
+										.form-site__field
+											input(type="text", placeholder="Ваше имя")
+
+									.form-site__item.js-form-site-item
+										.form-site__field
+											input(type="email", placeholder="Эл. почта")
+
+									.form-site__item.js-form-site-item
+										.form-site__field
+											input(type="text", class="js-phone", required="required", placeholder="Номер телефона*")
+
+									.form-site__item.js-form-site-item
+										.form-site__field
+											input(type="text", placeholder="Название компании")
+
+									.form-site__item.js-form-site-item
+										.form-site__field
+											select.select_dark.js-select(data-placeholder="Как вы узнали о нас?")
+												option(value="") Как вы узнали о нас?
+												option(value="Вариант 1") Вариант 1
+												option(value="Вариант 2") Вариант 2
+												option(value="Вариант 3") Вариант 3
+												option(value="Вариант 4") Вариант 4
+
+									.form-site__item.js-form-site-item
+										.form-site__field
+											textarea(placeholder='Опишите ваш запрос')
+
+								.form-site__btn
+									button(type="submit").btn.js-btn-submit Отправить
